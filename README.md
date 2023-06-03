@@ -612,11 +612,11 @@ Ezeután egy körrel levágjuk a nemkellő csúcsdarabot
  
 Végső mounting kamera 
  
-![alt text][image3]
+![alt text][image4]
  
 És a turtleboton elhelyezve 
  
-![alt text][image4]
+![alt text][image5]
  
  
  
