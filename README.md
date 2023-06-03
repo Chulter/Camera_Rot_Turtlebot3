@@ -573,10 +573,11 @@ roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch`
  
 ### Ezutan elforgatjuk oket a kivan pitch angle szerint ez esetben 53.1 Fok
  
- ###Letrehozunk egy match negyzetet ami szelessegben a kupfogaskerekek kivan hub tavolsaga egymastol es hossza a ket tengely metszete 
+###Letrehozunk egy match negyzetet ami szelessegben a kupfogaskerekek kivan hub tavolsaga egymastol es hossza a ket tengely metszete 
+ 
 ![alt text][image9]
  
- ###Loft parancsal az egyik fogat ki extrudaljuk hasznalv az match negyzetet mint vegont
+###Loft parancsal az egyik fogat ki extrudaljuk hasznalv az match negyzetet mint vegont
  
 ![alt text][image10]
 
@@ -591,13 +592,13 @@ roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch`
 ### Ha megvan ezt megismetelni a masik kupfogaskerekre is es match elni majd a fogakat circle function el klonozni .
  Ha ez megvan az en designom a konyebb design es a kenyelem miatt nem konvencialis csuklot tartalmaz hanem a vazba bevagas van 8 db bb golyo elhelyezesehez ami segit a gordulekeny forgas letrehozasaban 
  
-![alt text][image13]
+![alt text][image4]
  
- ###Vegso mounting kamera 
+###Vegso mounting kamera 
  
 ![alt text][image4]
  
- ###Es a turtleboton elhelyezve 
+###Es a turtleboton elhelyezve 
  
 ![alt text][image5]
  
