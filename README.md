@@ -8,6 +8,22 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 
 [image1]: ./assets/20230418_095734.jpg "Alap"
 [image2]: ./assets/controller_service_call.png "CTRL"
+[image3]: ./assets/20230418_095817.jpg "Kamera kozel"
+[image4]: ./assets/20230509_101052.jpg "Kamera mounted"
+[image5]: ./assets/20230509_101242.jpg "turtle mounted"
+[image6]: ./assets/Screenshot 2023-06-03 131029.png "Dynamixel f"
+[image7]: ./assets/Screenshot 2023-06-03 131102.png "Dynamixel k"
+[image8]: ./assets/Screenshot 2023-06-03 140226.png "Ket fogaskerek"
+[image9]: ./assets/Screenshot 2023-06-03 140245.png "Alap sik"
+[image10]: ./assets/Screenshot 2023-06-03 140408.png "Loft"
+[image11]: ./assets/Screenshot 2023-06-03 140503.png "Merere vagas"
+[image12]: ./assets/Screenshot 2023-06-03 140601.png "Alap csinalas"
+[image13]: ./assets/Screenshot 2023-06-03 140649.png "Golyok"
+[image14]: ./assets/controller_service_call.png "CTRL"
+[image15]: ./assets/20230418_095734.jpg "Alap"
+[image16]: ./assets/controller_service_call.png "CTRL"
+[image17]: ./assets/20230418_095734.jpg "Alap"
+[image18]: ./assets/controller_service_call.png "CTRL"
 
 
 ## Alap elhelyezés
@@ -100,7 +116,11 @@ https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
   
  Ha a dependency-k felvannak teve elso feladat egy gazeboos kornyezetben megcsinalni a csukloinkat 
  
- ehhez hasznaljuk az alap packege et 
+ Be kell alitanunk a bashrc fajlba hogy mi a burger el dolgozunk ezzel a kommand al :
+ 
+ `echo "export TURTLEBOT3_MODEL=burger"`
+ 
+ Hasznaljuk az alap packege et 
  
  Azon belul :
 \catkin_ws\src\turtlebot3\turtlebot3_description\urdf\turtlebot3_burger.urdf.xacro
@@ -259,6 +279,11 @@ A dynamixel trukkos lehet ezert elsosorban fontos leelenoriznunk hogy felismeri 
 https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/
 
 A telepittes utan elso dolgunk a beallitasokon belul  (Options) realisztikus baudrate et meghatarozni majd ha ismerjuk a model ID cimet lecsokkenteni realisztikus ertekre nincs ertelme  vegigutni minden ID ha tudjuk azt .
+
+  ![alt text][image6]
+ 
+    ![alt text][image7]
+
 Ha a wizzard megkapta a dynamixelt akkor pozicio kovetest el lehet vegezni a gorgo segitsegevel ha a torque enegdelyezve van 
 
 Ha megkapta  a gepunk akkor kezdhetjuk a workbench felepitteset es egy egyszeru write-read protokolt akarunk lefutattni  
@@ -545,6 +570,41 @@ roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch`
  
  ## 6.Modell felepitese 
  
+ Sok Cad softwerben dolgozhatunk de egyszerubbnek tartottam a Fusion360 mert jol ismerem de mashogy is meglehet csinalni .A cel ket kupfgaskerek ami rafer a dynamixelre es eleg kompakt hogy elferjen a turtle on 
+ 
+ A sima gear plugin al letrehozunk2 egymasba mesh elo fogaskereket (A fogak szamat mi hatarozzuk meg csak az m talaljon )
+ 
+ ![alt text][image8] 
+ 
+ Ezutan elforgatjuk oket a kivan pitch angle szerint ez esetben 53.1 Fok
+ 
+ Letrehozunk egy match negyzetet ami szelessegben a kupfogaskerekek kivan hub tavolsaga egymastol es hossza a ket tengely metszete 
+   ![alt text][image9]
+ 
+ Loft parancsal az egyik fogat ki extrudaljuk hasznalv az match negyzetet mint vegont
+ 
+   ![alt text][image10]
+
+ Ezeutan egy korrel levagjuk a nemkello csucsdarabot 
+ 
+   ![alt text][image11]
+ 
+ Ha ez megvan adunk neki egy hub ot amit mi hatarozunk meg de ugy hogy ne interferaljon a masik kerekkel (Ertsd ne erintse )
+ 
+   ![alt text][image12]
+ 
+ Ha megvan ezt megismetelni a masik kupfogaskerekre is es match elni majd a fogakat circle function el klonozni .
+ Ha ez megvan az en designom a konyebb design es a kenyelem miatt nem konvencialis csuklot tartalmaz hanem a vazba bevagas van 8 db bb golyo elhelyezesehez ami segit a gordulekeny forgas letrehozasaban 
+ 
+   ![alt text][image13]
+ 
+ Vegso mounting kamera 
+ 
+   ![alt text][image4]
+ 
+ Es a turtleboton elhelyezve 
+ 
+   ![alt text][image5]
  
  
  
