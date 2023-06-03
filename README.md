@@ -7,3 +7,5 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 [//]: # (Image References)
 
 [image1]: ./assets/20230418_095734.jpg "Alap"
+
+ ![alt text][image1] 
