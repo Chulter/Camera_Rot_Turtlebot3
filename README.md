@@ -16,7 +16,7 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 [image10]: ./assets/Screenshot-2023-06-03-140408.png "Loft"
 [image11]: ./assets/Screenshot-2023-06-03-140503.png "Merere vagas"
 [image12]: ./assets/Screenshot-2023-06-03-140601.png "Alap csinalas"
-[image13]: ./assets/20230509_101052.jpg "Golyok"
+[image13]: ./assets/Screenshot-2023-06-03-140649.jpg "Golyok"
 [image3]: ./assets/20230418_095817.jpg "Kamera kozel"
 [image4]:  ./assets/20230509_101242.jpg "Kamera mounted"
 
