@@ -93,6 +93,9 @@ https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
   `
  `git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git`
   
+  
+  ## 3.Turtlebot3 as virtualis kamera setup
+  
  Ha a dependency-k felvannak teve elso feladat egy gazeboos kornyezetben megcsinalni a csukloinkat 
  
  ehhez hasznaljuk az alap packege et 
@@ -102,7 +105,7 @@ https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
   
   Ehhez hozzadjuk a kamera modulunkat 
   
-```html
+```xml
 
      
 <!-- fajdalom kezdete -->
@@ -197,8 +200,66 @@ https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
 
 
   <!--fajadalom vege--> 
+```
 
+A gazebo fajl ba hozzacsatolhatjuk a kamera plugint 
+```xml
+<!-- Camera -->
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <visualize>false</visualize>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>25.0</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>head_camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link_optical</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
 
+```
+
+Ezutan rviz en belul meg is tekinthetjuk a kamera modult
+
+## 4.Dynamixel setup 
+
+A dynamixel trukkos lehet ezert elsosorban fontos leelenoriznunk hogy felismeri e a rendszerunk ehhez egy dynamixel wizzard programot hasznalunk :
+
+https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/
+
+A telepittes utan elso dolgunk a beallitasokon belul  (Options) realisztikus baudrate et meghatarozni majd ha ismerjuk a model ID cimet lecsokkenteni realisztikus ertekre nincs ertelme  vegigutni minden ID ha tudjuk azt .
+Ha a wizzard megkapta a dynamixelt akkor pozicio kovetest el lehet vegezni a gorgo segitsegevel ha a torque enegdelyezve van 
+
+Ha megkapta  a gepunk akkor kezdhetjuk a workbench felepitteset es egy egyszeru write-read protokolt akarunk lefutattni  
 
 
  
