@@ -608,15 +608,15 @@ Ezeután egy körrel levágjuk a nemkellő csúcsdarabot
  Ha megvan ezt megismételni a másik kúpfogaskerékre is és match elni majd a fogakat circle function el klónozni .
  Ha ez megvan az én design-om a könyebb design és a kényelem miatt nem konvenciális csuklót tartalmaz hanem a vázba bevágas van 8 db bb golyo elhelyezésehez ami segít a gordulekeny forgás létrehozásaban
  
-![alt text][image4]
+![alt text][image13]
  
 Végső mounting kamera 
  
-![alt text][image13]
+![alt text][image3]
  
 És a turtleboton elhelyezve 
  
-![alt text][image13]
+![alt text][image4]
  
  
  
