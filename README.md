@@ -25,11 +25,14 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 
  ![alt text][image1] 
  
-## Tartalomjegyzek
+## Tartalomjegyzék
 
  1. [Bevezetés](#-1.-Bevezetés)
- 
-
+ 2. [Csomagok letoltese](#-2.-Csomagok-letöltése)
+ 3. [Turtlebot3-as virtuális kamera setup](#3.-Turtlebot3-as-virtuális-kamera-setup)
+ 4. [Dynamixel setup](#-4.Dynamixel-setup)
+ 5. [Kamera modúl mozgatás](#-5.Kamera-modúl-mozgatás)
+ 6. [Modell felepítése ](#-6.Modell-felepítése)
    
  #  2. Csomagok letöltese 
  Első sorban le kell töltsuk az alap csomagot amely a turtlebot3 , Ros ,Dynamixel lesz elsősorban
@@ -108,7 +111,7 @@ https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
  `git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git`
   
   
-  ## 3.Turtlebot3 as virtualis kamera setup
+  3. Turtlebot3 as virtuális kamera setup
   
  Ha a dependency-k felvannak téve első feladat egy gazeboos környezetben megcsinálni a csuklóinkat 
  
@@ -268,7 +271,7 @@ A gazebo fájl ba hozzácsatolhatjuk a kamera plugint
 
 Ezutan rviz-en belül meg is tekinthetjük a kamera modúlt
 
-## 4.Dynamixel setup 
+# 4.Dynamixel setup 
 
 A dynamixel trukkös lehet ezért elsősorban fontos leelenőriznünk, hogy felismeri-e a rendszerünk ehhez egy dynamixel wizzard programot használunk :
 
@@ -399,7 +402,7 @@ Megnézzük a portjainkat :
  
  Ekkor fel kell ismerje a port-ot és oda vissza paszolja (ha ez errorba fut de az elöző lepések nem, lehet nem probléma lehet folytatni)
  
- ## 5.Kamera modúl mozgatás
+ # 5.Kamera modúl mozgatás
  
  `rosrun dynamixel_workbench_controllers find_dynamixel /dev/ttyUSB0`
  
@@ -514,7 +517,7 @@ value: 2048"
  ```
  Ezzel meg kéne mozdúljon 
  
- ###Ezutan ismetlödo mozgás létrehozása :
+ ##Ezutan ismetlödo mozgás létrehozása :
  
  Használjuk a motion.yaml fájlt 
  
@@ -571,7 +574,7 @@ roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch`
 
  Ezután ismetlödő periodikus mozgást kell végezzen a dynamixel 
  
- ## 6.Modell felepítése 
+ # 6.Modell felepítése 
  
 Sok Cad softwerben dolgozhatunk de egyszerübbnek tartottam a Fusion360ben dolgozni mert jól ismerem de máshogy is meglehet csinálni .A cél két kúpfgaskerék ami ráfer a dynamixelre és elég kompakt hogy elférjen a turtle-on 
  
