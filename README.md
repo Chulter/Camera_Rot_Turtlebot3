@@ -97,18 +97,21 @@ Ha megnyílt a legaljára a két kommand :
  
  Ezután letölthetjük a turtlebot csomagjait 
  
- `git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations
-  git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs
-  git clone https://github.com/MOGI-ROS/turtlebot3`
+ `git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations`
+ 
+  `git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs`
+  
+ ` git clone https://github.com/MOGI-ROS/turtlebot3`
  
 Majd a Dynamixel csomagjait is mainly az oldal lépéseit kell követni pár kaviáttal :
+
 https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
 
-`
- git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git`
+
+ `git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git`
  `
- git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
-  `
+ git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git`
+ 
  `git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git`
   
   
@@ -123,6 +126,7 @@ https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
  Használjuk az alap packege et 
  
  Azon belül :
+ 
 \catkin_ws\src\turtlebot3\turtlebot3_description\urdf\turtlebot3_burger.urdf.xacro
   
   Ehhez hozzádjuk a kamera modulunkat 
@@ -270,7 +274,7 @@ A gazebo fájl ba hozzácsatolhatjuk a kamera plugint
 
 ```
 
-Ezutan rviz-en belül meg is tekinthetjük a kamera modúlt
+Ezután rviz-en belül meg is tekinthetjük a kamera modúlt
 
 # 4.Dynamixel setup 
 
@@ -288,7 +292,7 @@ Ha a wizzard megkapta a dynamixelt akkor pozició kovetést el lehet végezni a 
 
 Ha megkapta  a gepunk akkor kezdhetjuk a workbench felepittését és egy egyszerű write-read protokolt akarunk lefutattni  
 
-Elso lépés az SDK konyvtar inicializálasa
+Elso lépés az SDK konyvtar inicializálása
 
 https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/library_setup/cpp_linux/#cpp-linux
 
