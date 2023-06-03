@@ -596,11 +596,11 @@ roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch`
  
 ###Vegso mounting kamera 
  
-![alt text][image4]
+![alt text][image13]
  
 ###Es a turtleboton elhelyezve 
  
-![alt text][image5]
+![alt text][image13]
  
  
  
