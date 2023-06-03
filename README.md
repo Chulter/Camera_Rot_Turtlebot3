@@ -87,11 +87,121 @@ Majd a Dynamixel csomagjait is mainly az oldal lepeseit kell kovetni par kaviatt
 https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
 
 `
- git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
+ git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git`
+ `
  git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
   `
+ `git clone https://github.com/ROBOTIS-GIT/DynamixelSDK.git`
   
+ Ha a dependency-k felvannak teve elso feladat egy gazeboos kornyezetben megcsinalni a csukloinkat 
+ 
+ ehhez hasznaljuk az alap packege et 
+ 
+ Azon belul :
+\catkin_ws\src\turtlebot3\turtlebot3_description\urdf\turtlebot3_burger.urdf.xacro
   
+  Ehhez hozzadjuk a kamera modulunkat 
+  
+```html
+
+     
+<!-- fajdalom kezdete -->
+
+  <joint name="camera_base" type="revolute">
+    <limit upper="1.57" lower="-1.57" velocity="10" effort="1"/>
+    <origin xyz="0.01 0 0.106" rpy="0 0 0"/>
+    <child link="camera_link1"/>
+    <parent link="base_footprint"/>
+    <axis xyz="0 0 1" />
+  </joint>   
+
+  <link name='camera_link1'>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+
+    <collision name='collision'>
+      <origin xyz="0 0 0" rpy="0 0 0"/> 
+      <geometry>
+         <cylinder length="0.05" radius="0.010" />
+      </geometry>
+    </collision>
+
+    <visual name='camera_link1_visual'>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+          <cylinder length="0.002" radius="0.015" />
+      </geometry>
+    </visual>
+
+  </link>
+
+
+ <!-- Camera -->
+  <joint type="fixed" name="camera_joint">
+    <origin xyz="0.01 0 0.003" rpy="0 0 0"/>
+    <child link="camera_link"/>
+    <parent link="camera_link1"/>
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <link name='camera_link'>
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+
+    <collision name='collision'>
+      <origin xyz="0 0 0" rpy="0 0 0"/> 
+      <geometry>
+        <box size=".01 .005 .005"/>
+      </geometry>
+    </collision>
+
+    <visual name='camera_link_visual'>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size=".0005 .01 .008"/>
+      </geometry>
+    </visual>
+
+  </link>
+
+ <joint type="fixed" name="camera_optical_joint">
+    <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
+    <child link="camera_link_optical"/>
+    <parent link="camera_link"/>
+  </joint>
+
+  <link name="camera_link_optical">
+  </link>
+
+  <gazebo reference="camera_link">
+    <material>Gazebo/Red</material>
+
+
+  </gazebo>
+
+
+  <!--fajadalom vege--> 
+
+
+
+
+ 
   
   
   
