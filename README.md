@@ -261,8 +261,63 @@ Ha a wizzard megkapta a dynamixelt akkor pozicio kovetest el lehet vegezni a gor
 
 Ha megkapta  a gepunk akkor kezdhetjuk a workbench felepitteset es egy egyszeru write-read protokolt akarunk lefutattni  
 
+Elso lepes az SDK konyvtar inicializalasa
 
+https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/library_setup/cpp_linux/#cpp-linux
+
+`gcc -v `
+
+Ha gcc nagyobb mint 5.4.0 20160609 akkor haladhaunk tovabb ha nem update elnunk kell
+
+`sudo apt-get install gcc-5`
+
+`sudo apt-get install build-essential`
+
+Feltesszuk a multilib funkciot (Tobb nyelv osszekotese)
+
+`sudo apt-get install gcc-multilib g++-multilib`
+
+Bemegyunk a make folderbe :
+
+/catkin_ws/src/DynamixelSDK/c++/build/linux64
+
+Ezen belul make elunk
+
+`make`
+
+Alaposan kell figyelni hogy ne legyen error ha van ujra kell make elni elobb torlunk egyet
+
+`make clean`
  
+majd make ujra 
+
+`make`
   
+ Ha sikeresen lefutott akkor kirakjuk a fo asztalra 
+ 
+ `sudo make install`
   
+  Ez is bakiba eshet ekkor letoroljuk es ujra make install 
   
+ `sudo make reinstall`
+  
+  Ha feltettuk akkor csinalunk egy beepitett read-write protokolt
+  
+  /catkin_ws/src/DynamixelSDK/c++/example/protocol1.0/read_write/linux64
+  
+  ezen belul :
+  
+  `make`
+  
+  Error eseten torles es ujra make
+Megnezzuk a portjainkat :
+
+`ls /dev/tty*`
+
+es mi az USB0 keressuk de mashogy is nevezhetik 
+  
+ 
+ <details>
+<summary>Ha wsl2 belul dolgozunk akkor atdobhatjuk a wsl2 nek a portokat windowsrol </summary>
+
+</details>
