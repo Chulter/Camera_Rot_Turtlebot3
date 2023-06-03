@@ -11,7 +11,7 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 [image3]: ./assets/20230418_095817.jpg "Kamera kozel"
 [image4]: ./assets/20230509_101052.jpg "Kamera mounted"
 [image5]: ./assets/20230509_101242.jpg "turtle mounted"
-[image6]: ./assets/Screenshot 2023-06-03 131029.png "Dynamixel f"
+[image6]: ./assets/Screenshot-2023-06-03-131029.png "Dynamixel f"
 [image7]: ./assets/Screenshot 2023-06-03 131102.png "Dynamixel k"
 [image8]: ./assets/Screenshot 2023-06-03 140226.png "Ket fogaskerek"
 [image9]: ./assets/Screenshot 2023-06-03 140245.png "Alap sik"
