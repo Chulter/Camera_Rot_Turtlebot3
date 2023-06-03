@@ -13,11 +13,8 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
  ![alt text][image1] 
 ## Tartalomjegyzek
 
- [Bevezetés](# 1.-Bevezetés)
+ 1. [Bevezetés](# 1.-Bevezetés)
  
 * Lista:
  ```markdown
-    1. item
-    2. item
-    3. item
    
