@@ -8,7 +8,7 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 
 [image1]: ./assets/20230418_095734.jpg "Alap"
 [image2]: ./assets/controller_service_call.png "CTRL"
-[image5]: ./assets/20230509_101242.jpg "turtle mounted"
+[image5]: ./assets/Screenshot-2023-06-03-140649.jpg  "turtle mounted"
 [image6]: ./assets/Screenshot-2023-06-03-131029.png "Dynamixel f"
 [image7]: ./assets/Screenshot-2023-06-03-131102.png "Dynamixel k"
 [image8]: ./assets/Screenshot-2023-06-03-140226.png "Ket fogaskerek"
@@ -18,7 +18,7 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 [image12]: ./assets/Screenshot-2023-06-03-140601.png "Alap csinalas"
 [image13]: ./assets/20230509_101052.jpg "Golyok"
 [image3]: ./assets/20230418_095817.jpg "Kamera kozel"
-[image4]:  ./assets/Screenshot-2023-06-03-140649.jpg "Kamera mounted"
+[image4]:  ./assets/20230509_101242.jpg "Kamera mounted"
 
 ## Alap elhelyezés
 
