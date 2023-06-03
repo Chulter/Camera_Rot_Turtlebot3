@@ -569,20 +569,20 @@ roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch`
  
  ###A sima gear plugin al letrehozunk2 egymasba mesh elo fogaskereket (A fogak szamat mi hatarozzuk meg csak az m talaljon )
  
- ![alt text][image8] 
+![alt text][image8] 
  
 ### Ezutan elforgatjuk oket a kivan pitch angle szerint ez esetben 53.1 Fok
  
  ###Letrehozunk egy match negyzetet ami szelessegben a kupfogaskerekek kivan hub tavolsaga egymastol es hossza a ket tengely metszete 
-   ![alt text][image9]
+![alt text][image9]
  
  ###Loft parancsal az egyik fogat ki extrudaljuk hasznalv az match negyzetet mint vegont
  
-   ![alt text][image10]
+![alt text][image10]
 
  ###Ezeutan egy korrel levagjuk a nemkello csucsdarabot 
  
-   ![alt text][image11]
+![alt text][image11]
  
 ### Ha ez megvan adunk neki egy hub ot amit mi hatarozunk meg de ugy hogy ne interferaljon a masik kerekkel (Ertsd ne erintse )
  
