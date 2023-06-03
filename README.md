@@ -320,4 +320,76 @@ es mi az USB0 keressuk de mashogy is nevezhetik
  <details>
 <summary>Ha wsl2 belul dolgozunk akkor atdobhatjuk a wsl2 nek a portokat windowsrol </summary>
 
+ https://devblogs.microsoft.com/commandline/connecting-usb-devices-to-wsl/
+ 
+ Feltelepitjuk 
+ 
+ https://github.com/dorssel/usbipd-win/releases
+ 
+ Ubuntun belul 
+ 
+ `sudo apt install linux-tools-5.4.0-77-generic hwdata`
+ 
+`sudo update-alternatives --install /usr/local/bin/usbip usbip /usr/lib/linux-tools/5.4.0-77-generic/usbip 20`
+ 
+ Ezutan windowson belul pl Powershell vagy csak cmd 
+ 
+ `usbipd wsl list`
+ 
+ usbipd wsl attach --busid <busid>
+ 
+ Itt lathatjuk a port okon levo eszkozok bus id jat es meg kell keressuk a dynamixelet
+ ha megvan akkor meg kell nyitni a wsl es nyitva kell tartani amig fut a cmd is
+ 
+ 
+ `usbipd wsl attach --busid <busid>`
+ (<busid> belul a talalt id rakjuk )
+  Engedelyt ker a rendszert ezutan ha megadtuk 
+ 
+  Ubuntun belul :
+ 
+ `lsusb `
+ Ezutan latnunk kene a port ot 
+ `ls /dev/tty*`
+ -is
+  
+  
 </details>
+ Ha altjuk a USB0 port ot akkor  visszamegyunk 
+ 
+  /catkin_ws/src/DynamixelSDK/c++/example/protocol1.0/read_write/linux64
+ 
+ es 
+ 
+ `sudo chmod a+rw /dev/ttyUSB0`
+ 
+ ezutan ha lefutott akkor mehet a protokol 
+ 
+ `./read_write`
+ 
+ Ekkor fel kell ismerje a port ot es oda vissza paszolja (ha ez errorba fut de az elozo lepesek nem lehet nem problema lehet folytatni)
+ 
+ ## 5.Kamera modul mozgatas
+ 
+ rosrun dynamixel_workbench_controllers find_dynamixel /dev/ttyUSB0
+ 
+ Megkeressuk a baudrate etet es id jat a dynamixelunknek ez ugyanazt kell adja mint a Wizzard 
+ 
+ Hasznalhatjuk a base yaml fajlokat 
+ 
+ joint_2_0.yaml :
+ 
+ ```console pan:
+  ID: 1
+  Return_Delay_Time: 0
+  Operating_Mode: 3
+  Profile_Acceleration: 0
+  Profile_Velocity: 0
+tilt:
+  ID: 2
+  Return_Delay_Time: 0
+  Operating_Mode: 3
+  Profile_Acceleration: 0
+  Profile_Velocity: 0```
+ 
+ 
