@@ -28,7 +28,7 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 ## Tartalomjegyzék
 
  1. [Bevezetés](#-1.-Bevezetés)
- 2. [Csomagok letoltese](#-2.-Csomagok-letöltése)
+ 2. [Csomagok letöltése](#-2.-Csomagok-letöltése)
  3. [Turtlebot3-as virtuális kamera setup](#3.-Turtlebot3-as-virtuális-kamera-setup)
  4. [Dynamixel setup](#-4.Dynamixel-setup)
  5. [Kamera modúl mozgatás](#-5.Kamera-modúl-mozgatás)
@@ -41,7 +41,7 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
  
  http://wiki.ros.org/noetic/Installation
  
- Engedélyezni szeretnénk a ros csomagokat hogy letölthessuk 
+ Engedélyezni szeretnénk a ros csomagokat hogy letölthessük 
  
  `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
  
@@ -67,7 +67,7 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
  
  (Ha a parancsra nem akarja feltenni a Ros t mivel nem "Trusted source" ,akkor ezt fel kell oldani a kernelen vagy ui on belül .
  
- Pelda video https://www.youtube.com/watch?v=ET2fXRExxco&t=170s&ab_channel=CyberZypher )
+ Példa videó https://www.youtube.com/watch?v=ET2fXRExxco&t=170s&ab_channel=CyberZypher )
  
  Ha feletelepült a Ros érdemes létrehozni egy workspace és ennek helyet elhelyezni a bashrc faljban 
  
