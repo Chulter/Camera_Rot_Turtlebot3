@@ -77,25 +77,25 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 
 `catkin_make`  
 
-Ezutan a bash be valo elhelyezés :
+Ezután a bash be való elhelyezés :
 
  `cd ~`  
  
 `nano .bashrc/`
 
-Ha megnyilt a legaljára a két kommand :
+Ha megnyílt a legaljára a két kommand :
 
  `source /opt/ros/noetic/setup.bash`  
 
  `source ~/catkin_ws/devel/setup.bash`  
  
- Ezutan ctrl +s és ctrl+x el elhagyjuk a bashrc fajlt
+ Ezután ctrl +s és ctrl+x el elhagyjuk a bashrc fájlt
  
- Ezutan belepve a source folderbe:
+ Ezután belépve a source folderbe:
  
  `cd ~/catkin_ws/src`
  
- Ezutan letölthetjük a turtlebot csomagjait 
+ Ezután letölthetjük a turtlebot csomagjait 
  
  `git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations
   git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs
