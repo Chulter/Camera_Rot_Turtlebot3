@@ -29,6 +29,7 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 ## Alap elhelyezés
 
  ![alt text][image1] 
+ 
 ## Tartalomjegyzek
 
  1. [Bevezetés](# 1.-Bevezetés)
@@ -280,9 +281,9 @@ https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/
 
 A telepittes utan elso dolgunk a beallitasokon belul  (Options) realisztikus baudrate et meghatarozni majd ha ismerjuk a model ID cimet lecsokkenteni realisztikus ertekre nincs ertelme  vegigutni minden ID ha tudjuk azt .
 
-  ![alt text][image6]
+ ![mi][image6]
  
-    ![alt text][image7]
+ ![alt text][image7]
 
 Ha a wizzard megkapta a dynamixelt akkor pozicio kovetest el lehet vegezni a gorgo segitsegevel ha a torque enegdelyezve van 
 
