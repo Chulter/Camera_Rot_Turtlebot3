@@ -51,3 +51,46 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
  (Ha a parancsra nem akarja feltenni a Ros t mivel nem "Trusted source" ,akkor ezt fel kell oldani a kernelen vagy ui on belul .
  Pelda video https://www.youtube.com/watch?v=ET2fXRExxco&t=170s&ab_channel=CyberZypher )
  
+ 
+ Ha feletelepult a Ros erdemes letrehozni egy workspace es ennek helyet elhelyezni a bashrc faljban 
+ 
+ `cd ~`  
+`mkdir -p catkin_ws/src`  
+`cd catkin_ws`  (Tetszoleges nev)
+`catkin_make`  
+
+Ezutan a bash be valo elhelyezes :
+
+ `cd ~`  
+ 
+`nano .bashrc/`
+
+Ha megnyilt a legaljara a ket kommand :
+
+ `source /opt/ros/noetic/setup.bash`  
+
+ `source ~/catkin_ws/devel/setup.bash`  
+ 
+ Ezutan ctrl +s es ctrl+x el elhagyjuk a bashrc fajlt
+ 
+ Ezutan belepve a source folderbe:
+ 
+ `cd ~/catkin_ws/src`
+ 
+ Ezutan letolthaejuk a turtlebot csomagjait 
+ 
+ `git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations
+  git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs
+  git clone https://github.com/MOGI-ROS/turtlebot3`
+ 
+Majd a Dynamixel csomagjait is mainly az oldal lepeseit kell kovetni par kaviattal :
+https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
+`
+ git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
+ git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
+  `
+  
+  
+  
+  
+  
