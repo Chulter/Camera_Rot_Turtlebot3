@@ -85,6 +85,7 @@ Ha megnyilt a legaljara a ket kommand :
  
 Majd a Dynamixel csomagjait is mainly az oldal lepeseit kell kovetni par kaviattal :
 https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
+
 `
  git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
  git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git
