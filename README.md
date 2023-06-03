@@ -31,73 +31,73 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
  
 
    
- #  2. Csomagok letoltese 
- Elso sorban le kell toltsuk az alap csomagot amely a turtlebot3 , Ros ,Dynamixel lesz elsosorban
+ #  2. Csomagok letöltese 
+ Első sorban le kell töltsuk az alap csomagot amely a turtlebot3 , Ros ,Dynamixel lesz elsősorban
  
- Ros letoltese :
+ Ros letöltese :
  
  http://wiki.ros.org/noetic/Installation
  
- Engedelyezni szeretnenk a ros csomagokat hogy letolthessuk 
+ Engedélyezni szeretnénk a ros csomagokat hogy letölthessuk 
  
  `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
  
- Erdemes feltenni a curl-t biztos ami biztos 
+ Érdemes feltenni a curl-t biztos ami biztos 
  
  `sudo apt install curl`
  
- Hozzaadjuk a kulcsot :
+ Hozzáadjuk a kulcsot :
  
  `curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -`
  
- Ezek utan : 
+ Ezek után : 
  
  `sudo apt update`
  
- es 
+ és 
  
  `sudo apt upgrade`
  
- Ha megvannak ezek el lehet kezdeni a ros feltelepiteset:(Erdemes a teljes deskotp packaget felrakni)
+ Ha megvannak ezek el lehet kezdeni a ros feltelepítését:(Érdemes a teljes deskotp packaget felrakni)
 
  `sudo apt install ros-noetic-desktop-full`
  
- (Ha a parancsra nem akarja feltenni a Ros t mivel nem "Trusted source" ,akkor ezt fel kell oldani a kernelen vagy ui on belul .
+ (Ha a parancsra nem akarja feltenni a Ros t mivel nem "Trusted source" ,akkor ezt fel kell oldani a kernelen vagy ui on belül .
+ 
  Pelda video https://www.youtube.com/watch?v=ET2fXRExxco&t=170s&ab_channel=CyberZypher )
  
- 
- Ha feletelepult a Ros erdemes letrehozni egy workspace es ennek helyet elhelyezni a bashrc faljban 
+ Ha feletelepült a Ros érdemes létrehozni egy workspace és ennek helyet elhelyezni a bashrc faljban 
  
  `cd ~`  
 `mkdir -p catkin_ws/src`  
 `cd catkin_ws`  (Tetszoleges nev)
 `catkin_make`  
 
-Ezutan a bash be valo elhelyezes :
+Ezutan a bash be valo elhelyezés :
 
  `cd ~`  
  
 `nano .bashrc/`
 
-Ha megnyilt a legaljara a ket kommand :
+Ha megnyilt a legaljára a két kommand :
 
  `source /opt/ros/noetic/setup.bash`  
 
  `source ~/catkin_ws/devel/setup.bash`  
  
- Ezutan ctrl +s es ctrl+x el elhagyjuk a bashrc fajlt
+ Ezutan ctrl +s és ctrl+x el elhagyjuk a bashrc fajlt
  
  Ezutan belepve a source folderbe:
  
  `cd ~/catkin_ws/src`
  
- Ezutan letolthaejuk a turtlebot csomagjait 
+ Ezutan letölthetjük a turtlebot csomagjait 
  
  `git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations
   git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs
   git clone https://github.com/MOGI-ROS/turtlebot3`
  
-Majd a Dynamixel csomagjait is mainly az oldal lepeseit kell kovetni par kaviattal :
+Majd a Dynamixel csomagjait is mainly az oldal lépéseit kell követni pár kaviáttal :
 https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
 
 `
@@ -110,18 +110,18 @@ https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
   
   ## 3.Turtlebot3 as virtualis kamera setup
   
- Ha a dependency-k felvannak teve elso feladat egy gazeboos kornyezetben megcsinalni a csukloinkat 
+ Ha a dependency-k felvannak téve első feladat egy gazeboos környezetben megcsinálni a csuklóinkat 
  
- Be kell alitanunk a bashrc fajlba hogy mi a burger el dolgozunk ezzel a kommand al :
+ Be kell álítanunk a bashrc fájlba, hogy mi a burger el dolgozunk ezzel a kommand al :
  
  `echo "export TURTLEBOT3_MODEL=burger"`
  
- Hasznaljuk az alap packege et 
+ Használjuk az alap packege et 
  
- Azon belul :
+ Azon belül :
 \catkin_ws\src\turtlebot3\turtlebot3_description\urdf\turtlebot3_burger.urdf.xacro
   
-  Ehhez hozzadjuk a kamera modulunkat 
+  Ehhez hozzádjuk a kamera modulunkat 
   
 ```xml
 
@@ -220,7 +220,7 @@ https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_workbench/
   <!--fajadalom vege--> 
 ```
 
-A gazebo fajl ba hozzacsatolhatjuk a kamera plugint 
+A gazebo fájl ba hozzácsatolhatjuk a kamera plugint 
 ```xml
 <!-- Camera -->
   <gazebo reference="camera_link">
@@ -266,96 +266,100 @@ A gazebo fajl ba hozzacsatolhatjuk a kamera plugint
 
 ```
 
-Ezutan rviz en belul meg is tekinthetjuk a kamera modult
+Ezutan rviz-en belül meg is tekinthetjük a kamera modúlt
 
 ## 4.Dynamixel setup 
 
-A dynamixel trukkos lehet ezert elsosorban fontos leelenoriznunk hogy felismeri e a rendszerunk ehhez egy dynamixel wizzard programot hasznalunk :
+A dynamixel trukkös lehet ezért elsősorban fontos leelenőriznünk, hogy felismeri-e a rendszerünk ehhez egy dynamixel wizzard programot használunk :
 
 https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_wizard2/
 
-A telepittes utan elso dolgunk a beallitasokon belul  (Options) realisztikus baudrate et meghatarozni majd ha ismerjuk a model ID cimet lecsokkenteni realisztikus ertekre nincs ertelme  vegigutni minden ID ha tudjuk azt .
+A telepittés után elsó dolgunk a beallitásokon belül  (Options) realisztikus baudrate et meghatározni majd ha ismerjuk a model ID címet lecsökkenteni realisztikus értékre nincs értelme  végigfutni minden ID-n  ha tudjuk azt .
 
  ![mi][image6]
  
  ![alt text][image7]
 
-Ha a wizzard megkapta a dynamixelt akkor pozicio kovetest el lehet vegezni a gorgo segitsegevel ha a torque enegdelyezve van 
+Ha a wizzard megkapta a dynamixelt akkor pozició kovetést el lehet végezni a görgo segítségevel ha a torque enegdélyezve van 
 
-Ha megkapta  a gepunk akkor kezdhetjuk a workbench felepitteset es egy egyszeru write-read protokolt akarunk lefutattni  
+Ha megkapta  a gepunk akkor kezdhetjuk a workbench felepittését és egy egyszerű write-read protokolt akarunk lefutattni  
 
-Elso lepes az SDK konyvtar inicializalasa
+Elso lépés az SDK konyvtar inicializálasa
 
 https://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/library_setup/cpp_linux/#cpp-linux
 
 `gcc -v `
 
-Ha gcc nagyobb mint 5.4.0 20160609 akkor haladhaunk tovabb ha nem update elnunk kell
+Ha gcc nagyobb mint 5.4.0 20160609 akkor haladhaunk tovább ha nem update elnünk kell
 
 `sudo apt-get install gcc-5`
 
+Ezután :
+
 `sudo apt-get install build-essential`
 
-Feltesszuk a multilib funkciot (Tobb nyelv osszekotese)
+Feltesszuk a multilib funkciót (Tobb nyelv összekötése)
 
 `sudo apt-get install gcc-multilib g++-multilib`
 
-Bemegyunk a make folderbe :
+Bemegyünk a make folderbe :
 
 /catkin_ws/src/DynamixelSDK/c++/build/linux64
 
-Ezen belul make elunk
+Ezen belül make elünk
 
 `make`
 
-Alaposan kell figyelni hogy ne legyen error ha van ujra kell make elni elobb torlunk egyet
+Alaposan kell figyelni hogy ne legyen error ha van újra kell make elni elöbb türlunk egyet
 
 `make clean`
  
-majd make ujra 
+majd make újra 
 
 `make`
   
- Ha sikeresen lefutott akkor kirakjuk a fo asztalra 
+ Ha sikeresen lefutott akkor kirakjuk a fő asztalra 
  
  `sudo make install`
   
-  Ez is bakiba eshet ekkor letoroljuk es ujra make install 
+  Ez is bakiba eshet ekkor letöroljuk és újra make install 
   
  `sudo make reinstall`
   
-  Ha feltettuk akkor csinalunk egy beepitett read-write protokolt
+  Ha feltettük akkor csinálunk egy beépített read-write protokolt
   
   /catkin_ws/src/DynamixelSDK/c++/example/protocol1.0/read_write/linux64
   
-  ezen belul :
+  ezen belül :
   
   `make`
   
-  Error eseten torles es ujra make
-Megnezzuk a portjainkat :
+  Error esetén törlés és újra make
+  
+Megnézzük a portjainkat :
 
 `ls /dev/tty*`
 
-es mi az USB0 keressuk de mashogy is nevezhetik 
+és mi az USB0 keressük de máshogy is nevezhetik ha látjuk mehetünk tovább 
   
  
- <details>
-<summary>Ha wsl2 belul dolgozunk akkor atdobhatjuk a wsl2 nek a portokat windowsrol </summary>
+<details>
+ 
+<summary>Ha wsl2-en  belűl dolgozunk akkor átdobhatjuk a wsl2-nek a portokat windowsról </summary>
 
  https://devblogs.microsoft.com/commandline/connecting-usb-devices-to-wsl/
  
- Feltelepitjuk 
+ Feltelepítjük 
  
  https://github.com/dorssel/usbipd-win/releases
  
- Ubuntun belul 
+ Ubuntun belül 
  
  `sudo apt install linux-tools-5.4.0-77-generic hwdata`
  
 `sudo update-alternatives --install /usr/local/bin/usbip usbip /usr/lib/linux-tools/5.4.0-77-generic/usbip 20`
  
- Ezutan windowson belul pl Powershell vagy csak cmd 
+ Ezután windowson belül pl Powershell vagy csak cmd 
  
  `usbipd wsl list`
  
@@ -363,44 +367,45 @@ es mi az USB0 keressuk de mashogy is nevezhetik
  
  usbipd wsl attach --busid <busid>
  
- Itt lathatjuk a port okon levo eszkozok bus id jat es meg kell keressuk a dynamixelet
- ha megvan akkor meg kell nyitni a wsl es nyitva kell tartani amig fut a cmd is
+ Itt láthatjuk a port okon levő eszközök bus id-ját és meg kell keressük a dynamixelet
+ ha megvan akkor meg kell nyitni a wsl-t és nyitva kell tartani amíg fut a cmd is
  
  
  `usbipd wsl attach --busid <busid>`
- (<busid> belul a talalt id rakjuk )
-  Engedelyt ker a rendszert ezutan ha megadtuk 
+ (<busid> belul a talált id rakjuk )
+  Engedelyt kér a rendszert ezután ha megadtuk :
  
-  Ubuntun belul :
+  Ubuntun belül :
  
  `lsusb `
- Ezutan latnunk kene a port ot 
+ Ezután látnunk kéne a port ot 
+ 
  `ls /dev/tty*`
  -is
   
   
 </details>
- Ha altjuk a USB0 port ot akkor  visszamegyunk 
+ Ha láltjuk a USB0 port ot akkor  visszamegyünk 
  
   /catkin_ws/src/DynamixelSDK/c++/example/protocol1.0/read_write/linux64
  
- es 
+ és 
  
  `sudo chmod a+rw /dev/ttyUSB0`
  
- ezutan ha lefutott akkor mehet a protokol 
+ ezután ha lefutott akkor mehet a protokol 
  
  `./read_write`
  
- Ekkor fel kell ismerje a port ot es oda vissza paszolja (ha ez errorba fut de az elozo lepesek nem lehet nem problema lehet folytatni)
+ Ekkor fel kell ismerje a port-ot és oda vissza paszolja (ha ez errorba fut de az elöző lepések nem, lehet nem probléma lehet folytatni)
  
- ## 5.Kamera modul mozgatas
+ ## 5.Kamera modúl mozgatás
  
- rosrun dynamixel_workbench_controllers find_dynamixel /dev/ttyUSB0
+ `rosrun dynamixel_workbench_controllers find_dynamixel /dev/ttyUSB0`
  
- Megkeressuk a baudrate etet es id jat a dynamixelunknek ez ugyanazt kell adja mint a Wizzard 
+ Megkeressük a baudrate et és id ját a dynamixelünknek, ez ugyanazt kell adja mint a Wizzard 
  
- Hasznalhatjuk a base yaml fajlokat 
+ Használhatjuk a base yaml fájlokat a adynamixel worskpace ből
  
  joint_2_0.yaml :
  
@@ -417,7 +422,7 @@ tilt:
   Profile_Acceleration: 0
   Profile_Velocity: 0```
  
- Nekunk csak egy mozgas kell most  szoval (Vigyazzunk hogy az ID n sajatunk legyen )
+ Nekünk csak egy mozgás kell most  szóval (Vigyázzunk, hogy az ID n sajátunk legyen )
  
   ```console pan:
   ID: 13
@@ -454,7 +459,7 @@ Bemegyunk a dynamixel_controller.launch ba:
   </node>
 </launch>
  ```
- Beallitjuk abaudrate unket es a basic.yaml helyett a mienket rakjuk 
+ Beállítjuk a baudrate ünket és a basic.yaml helyett a miénket rakjuk 
  
  ```xml 
  <launch>
@@ -485,21 +490,21 @@ Bemegyunk a dynamixel_controller.launch ba:
 </launch>
  ```
  
- Ekkor ha belepunk a workspace be es leforditjuk a csomagokat 
+ Ekkor ha belépunk a workspace-be és lefordítjuk a csomagokat 
  `
  cd ~/catkin_ws && catkin_make`
  `
- Elinditva  controll fajlunk 
- roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch
+ Elindítva  controll fájlunk 
+ 
+ `roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch`
  `
-Ha megtalalta a dynamixelt id vel egyutt akkor 
+Ha megtalálta a dynamixelt id vel együtt akkor 
  
- Egy rqt - t nyitva parhuzamosan beallitjuk a parametereket 
- 
+ Egy rqt - t nyitva parhuzamosan beállítjuk a paramétereket :
  
  ![alt text][image2] 
 
- Vagy alternativan 
+ Vagy alternatívan :
  
  ```console 
  rosservice call /dynamixel_workbench/dynamixel_command "command: ''
@@ -507,11 +512,11 @@ id: 13
 addr_name: 'Goal_Position'
 value: 2048"
  ```
- Ezzel meg kene mozduljon 
+ Ezzel meg kéne mozdúljon 
  
- Ezutan ismetlodo mozgas letrehozasa :
+ ###Ezutan ismetlödo mozgás létrehozása :
  
- Hasznaljuk a motion.yaml fajlt 
+ Használjuk a motion.yaml fájlt 
  
  ```console 
  joint:
@@ -530,7 +535,7 @@ motion:
  
  ```
  
- Atalakitva :
+ Átalakítva :
  
  ```console 
  joint:
@@ -550,12 +555,12 @@ motion:
  
  Majd a joint_operator.launch ban :
  
- (Bealitjuk hogy ismetlodjon a motion kicserelve a fasle-t)
+ (Beálítjuk hogy ismétlődjön a motion kicserélve a false -t)
  
  ```xml 
   <arg name="is_loop"               default="true"/>
  ```
- Hogy elinditsuk :
+ Hogy elindítsuk :
  `
  cd ~/catkin_ws && catkin_make`
  `
@@ -563,45 +568,45 @@ roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch`
  `
  roslaunch dynamixel_workbench_operators joint_operator.launch
  `
+
+ Ezután ismetlödő periodikus mozgást kell végezzen a dynamixel 
  
- Ezutan ismetlodo periodikus mozgast kell vegezzen a dynamixel 
+ ## 6.Modell felepítése 
  
- ## 6.Modell felepitese 
+Sok Cad softwerben dolgozhatunk de egyszerübbnek tartottam a Fusion360ben dolgozni mert jól ismerem de máshogy is meglehet csinálni .A cél két kúpfgaskerék ami ráfer a dynamixelre és elég kompakt hogy elférjen a turtle-on 
  
-Sok Cad softwerben dolgozhatunk de egyszerubbnek tartottam a Fusion360 mert jol ismerem de mashogy is meglehet csinalni .A cel ket kupfgaskerek ami rafer a dynamixelre es eleg kompakt hogy elferjen a turtle on 
- 
-A sima gear plugin al letrehozunk2 egymasba mesh elo fogaskereket (A fogak szamat mi hatarozzuk meg csak az m talaljon )
+A sima gear plugin-el létrehozunk2 egymásba mesh elő fogaskereket (A fogak számát mi határozzuk meg csak az m találjon )
  
 ![alt text][image8] 
  
- Ezutan elforgatjuk oket a kivan pitch angle szerint ez esetben 53.1 Fok
+ Ezután elforgatjuk őket a kívánt pitch angle szerint ez esetben 53.1 Fok
  
-Letrehozunk egy match negyzetet ami szelessegben a kupfogaskerekek kivan hub tavolsaga egymastol es hossza a ket tengely metszete 
+Létrehozunk egy match négyzetet ami szélességben a kúpfogaskerekek kivánt hub távólsága egymástól és hossza a két tengely metszete 
  
 ![alt text][image9]
  
-Loft parancsal az egyik fogat ki extrudaljuk hasznalv az match negyzetet mint vegont
+Loft parancsal az egyik fogat ki extrudáljuk használva a match négyzetet mint végpont
  
 ![alt text][image10]
 
-Ezeutan egy korrel levagjuk a nemkello csucsdarabot 
+Ezeután egy körrel levágjuk a nemkellő csúcsdarabot 
  
 ![alt text][image11]
  
- Ha ez megvan adunk neki egy hub ot amit mi hatarozunk meg de ugy hogy ne interferaljon a masik kerekkel (Ertsd ne erintse )
+ Ha ez megvan adunk neki egy hub ot amit mi határozunk meg de úgy , hogy ne interferáljon a másik kerékkel (Értsd ne érintse )
  
 ![alt text][image12]
  
- Ha megvan ezt megismetelni a masik kupfogaskerekre is es match elni majd a fogakat circle function el klonozni .
- Ha ez megvan az en designom a konyebb design es a kenyelem miatt nem konvencialis csuklot tartalmaz hanem a vazba bevagas van 8 db bb golyo elhelyezesehez ami segit a gordulekeny forgas letrehozasaban 
+ Ha megvan ezt megismételni a másik kúpfogaskerékre is és match elni majd a fogakat circle function el klónozni .
+ Ha ez megvan az én design-om a könyebb design és a kényelem miatt nem konvenciális csuklót tartalmaz hanem a vázba bevágas van 8 db bb golyo elhelyezésehez ami segít a gordulekeny forgás létrehozásaban
  
 ![alt text][image4]
  
-Vegso mounting kamera 
+Végső mounting kamera 
  
 ![alt text][image13]
  
-Es a turtleboton elhelyezve 
+És a turtleboton elhelyezve 
  
 ![alt text][image13]
  
