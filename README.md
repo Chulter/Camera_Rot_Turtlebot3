@@ -610,13 +610,9 @@ Ezeután egy körrel levágjuk a nemkellő csúcsdarabot
  
 ![alt text][image13]
  
-Végső mounting kamera 
+Végső mounting kamera és a turtleboton elhelyezve 
  
 ![alt text][image4]
- 
-És a turtleboton elhelyezve 
- 
-![alt text][image5]
  
  
  
