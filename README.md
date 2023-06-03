@@ -73,7 +73,8 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
  
  `cd ~`  
 `mkdir -p catkin_ws/src`  
-`cd catkin_ws`  (Tetszoleges nev)
+`cd catkin_ws`  (Tetszőleges név)
+
 `catkin_make`  
 
 Ezutan a bash be valo elhelyezés :
