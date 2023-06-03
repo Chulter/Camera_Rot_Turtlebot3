@@ -7,6 +7,8 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 [//]: # (Image References)
 
 [image1]: ./assets/20230418_095734.jpg "Alap"
+[image2]: ./assets/controller_service_call.png "CTRL"
+
 
 ## Alap elhelyezés
 
@@ -470,5 +472,80 @@ Bemegyunk a dynamixel_controller.launch ba:
 Ha megtalalta a dynamixelt id vel egyutt akkor 
  
  Egy rqt - t nyitva parhuzamosan beallitjuk a parametereket 
+ 
+ 
+ ![alt text][image2] 
+
+ Vagy alternativan 
+ 
+ ```console 
+ rosservice call /dynamixel_workbench/dynamixel_command "command: ''
+id: 13
+addr_name: 'Goal_Position'
+value: 2048"
+ ```
+ Ezzel meg kene mozduljon 
+ 
+ Ezutan ismetlodo mozgas letrehozasa :
+ 
+ Hasznaljuk a motion.yaml fajlt 
+ 
+ ```console 
+ joint:
+  names: [pan, tilt]
+motion:
+  names: [right, zero, left]
+  right:
+    step: [-3.14, -3.14]  # radian
+    time_from_start: 2.0  # sec
+  zero:
+    step: [0.0, 0.0]
+    time_from_start: 3.0
+  left:
+    step: [3.14, 3.14]
+    time_from_start: 6.0
+ 
+ ```
+ 
+ Atalakitva :
+ 
+ ```console 
+ joint:
+  names: [pan]
+motion:
+  names: [right, zero, left]
+  right:
+    step: [-3.14]  # radian
+    time_from_start: 2.0  # sec
+  zero:
+    step: [0.0]
+    time_from_start: 3.0
+  left:
+    step: [3.14]
+    time_from_start: 6.0
+ ```
+ 
+ Majd a joint_operator.launch ban :
+ 
+ (Bealitjuk hogy ismetlodjon a motion kicserelve a fasle-t)
+ 
+ ```xml 
+  <arg name="is_loop"               default="true"/>
+ ```
+ Hogy elinditsuk :
+ `
+ cd ~/catkin_ws && catkin_make`
+ `
+roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch`
+ `
+ roslaunch dynamixel_workbench_operators joint_operator.launch
+ `
+ 
+ Ezutan ismetlodo periodikus mozgast kell vegezzen a dynamixel 
+ 
+ ## 6.Modell felepitese 
+ 
+ 
+ 
  
  
