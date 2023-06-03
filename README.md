@@ -392,4 +392,83 @@ tilt:
   Profile_Acceleration: 0
   Profile_Velocity: 0```
  
+ Nekunk csak egy mozgas kell most  szoval (Vigyazzunk hogy az ID n sajatunk legyen )
+ 
+  ```console pan:
+  ID: 13
+  Return_Delay_Time: 0
+  Operating_Mode: 3
+  Profile_Acceleration: 0
+  Profile_Velocity: 0 ```
+Bemegyunk a dynamixel_controller.launch ba:
+  ```xml 
+ <launch>
+  <arg name="usb_port"                default="/dev/ttyUSB0"/>
+  <arg name="dxl_baud_rate"           default="57600"/>
+  <arg name="namespace"               default="dynamixel_workbench"/>
+
+  <arg name="use_moveit"              default="false"/>
+  <arg name="use_joint_state"         default="true"/>
+  <arg name="use_cmd_vel"             default="false"/>
+
+  <param name="dynamixel_info"          value="$(find dynamixel_workbench_controllers)/config/basic.yaml"/>
+
+  <node name="$(arg namespace)" pkg="dynamixel_workbench_controllers" type="dynamixel_workbench_controllers"
+        required="true" output="screen" args="$(arg usb_port) $(arg dxl_baud_rate)">
+    <param name="use_moveit"              value="$(arg use_moveit)"/>
+    <param name="use_joint_states_topic"  value="$(arg use_joint_state)"/>
+    <param name="use_cmd_vel_topic"       value="$(arg use_cmd_vel)"/>
+    <rosparam>
+      publish_period: 0.010
+      dxl_read_period: 0.010
+      dxl_write_period: 0.010
+      mobile_robot_config:                <!--this values will be set when 'use_cmd_vel' is true-->
+        seperation_between_wheels: 0.160  <!--default value is set by reference of TB3-->
+        radius_of_wheel: 0.033            <!--default value is set by reference of TB3-->
+    </rosparam>
+  </node>
+</launch>
+ ```
+ Beallitjuk abaudrate unket es a basic.yaml helyett a mienket rakjuk 
+ 
+ ```xml 
+ <launch>
+  <arg name="usb_port"                default="/dev/ttyUSB0"/>
+  <arg name="dxl_baud_rate"           default="57600"/>
+  <arg name="namespace"               default="dynamixel_workbench"/>
+
+  <arg name="use_moveit"              default="false"/>
+  <arg name="use_joint_state"         default="true"/>
+  <arg name="use_cmd_vel"             default="false"/>
+
+  <param name="dynamixel_info"          value="$(find dynamixel_workbench_controllers)/config/joint_2_0.yaml"/>
+
+  <node name="$(arg namespace)" pkg="dynamixel_workbench_controllers" type="dynamixel_workbench_controllers"
+        required="true" output="screen" args="$(arg usb_port) $(arg dxl_baud_rate)">
+    <param name="use_moveit"              value="$(arg use_moveit)"/>
+    <param name="use_joint_states_topic"  value="$(arg use_joint_state)"/>
+    <param name="use_cmd_vel_topic"       value="$(arg use_cmd_vel)"/>
+    <rosparam>
+      publish_period: 0.010
+      dxl_read_period: 0.010
+      dxl_write_period: 0.010
+      mobile_robot_config:                <!--this values will be set when 'use_cmd_vel' is true-->
+        seperation_between_wheels: 0.160  <!--default value is set by reference of TB3-->
+        radius_of_wheel: 0.033            <!--default value is set by reference of TB3-->
+    </rosparam>
+  </node>
+</launch>
+ ```
+ 
+ Ekkor ha belepunk a workspace be es leforditjuk a csomagokat 
+ `
+ cd ~/catkin_ws && catkin_make`
+ `
+ Elinditva  controll fajlunk 
+ roslaunch dynamixel_workbench_controllers dynamixel_controllers.launch
+ `
+Ha megtalalta a dynamixelt id vel egyutt akkor 
+ 
+ Egy rqt - t nyitva parhuzamosan beallitjuk a parametereket 
+ 
  
