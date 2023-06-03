@@ -15,8 +15,7 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
 
  1. [Bevezetés](# 1.-Bevezetés)
  
-* Lista:
- ```markdown
+
    
  #  2. Csomagok letoltese 
  Elso sorban le kell toltsuk az alap csomagot amely a turtlebot3 , Ros ,Dynamixel lesz elsosorban
