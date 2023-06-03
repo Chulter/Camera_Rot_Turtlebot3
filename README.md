@@ -28,10 +28,26 @@ A projekt cékja a turtlebot on lévő állo kaera mountot ami egy raspberry kae
  
  `sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'`
  
- Erdemes feltenni a curl biztos ami biztos 
+ Erdemes feltenni a curl-t biztos ami biztos 
  
  `sudo apt install curl`
  
+ Hozzaadjuk a kulcsot :
+ 
+ `curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -`
+ 
+ Ezek utan : 
+ 
+ `sudo apt update`
+ 
+ es 
+ 
+ `sudo apt upgrade`
+ 
+ Ha megvannak ezek el lehet kezdeni a ros feltelepiteset:(Erdemes a teljes deskotp packaget felrakni)
+
  `sudo apt install ros-noetic-desktop-full`
  
+ (Ha a parancsra nem akarja feltenni a Ros t mivel nem "Trusted source" ,akkor ezt fel kell oldani a kernelen vagy ui on belul .
+ Pelda video https://www.youtube.com/watch?v=ET2fXRExxco&t=170s&ab_channel=CyberZypher )
  
